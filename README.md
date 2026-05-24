@@ -271,4 +271,4 @@ For customization help or questions about specific features, refer to:
 **Last Updated**: 2026  
 **License**: All Rights Reserved  
 
-Enjoy building your copy betting platform! 🚀
+
