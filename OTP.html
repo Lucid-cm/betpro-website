@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification - BetPro</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      name="description"
+      content="Verify your BetPro account with a one-time password to complete your sign in."
+    />
+  </head>
+  <body>
+    <header class="auth-header">
+      <a href="index.html" class="auth-back">&#8592; Back to Home</a>
+    </header>
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-logo">
+          <div class="logo-icon">⚡</div>
+          <span class="auth-logo-text">BetPro</span>
+        </div>
+        <h1 class="auth-title">Verify Your Code</h1>
+        <p class="auth-subtitle">Code will expire within 30 seconds</p>
+
+        <form id="otpForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="otpCode">
+              OTP Code <span class="required">*</span>
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="otpCode"
+                class="form-input"
+                placeholder="Enter 6-digit code"
+                required
+                autocomplete="off"
+                maxlength="6"
+              />
+              <button
+                type="button"
+                class="input-toggle"
+                onclick="togglePassword('otpCode', this)"
+                aria-label="Toggle code visibility"
+              >👁</button>
+            </div>
+            <div class="hint-text">Check your email for the verification code</div>
+          </div>
+
+          <button type="submit" class="btn-auth">Confirm & Sign In</button>
+        </form>
+
+        <p class="auth-footer-text">
+          Didn't receive the code?
+          <a href="signup.html" class="form-link">Send again</a>
+        </p>
+      </div>
+    </main>
+
+    <script>
+      function togglePassword(fieldId, button) {
+        const input = document.getElementById(fieldId);
+        if (input.type === 'password') {
+          input.type = 'text';
+          button.textContent = '👁‍🗨';
+        } else {
+          input.type = 'password';
+          button.textContent = '👁';
+        }
+      }
+
+      document.getElementById('otpForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const otpCode = document.getElementById('otpCode').value.trim();
+        
+        if (!otpCode) {
+          alert('Please enter the OTP code');
+          return;
+        }
+
+        if (otpCode.length !== 6 || isNaN(otpCode)) {
+          alert('Please enter a valid 6-digit code');
+          return;
+        }
+
+        // Redirect to dashboard on successful verification
+        window.location.href = 'dashboard.html';
+      });
+    </script>
+  </body>
+</html>
