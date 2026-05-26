@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OTP Verification - BetPro</title>
+    <title>otp page</title>
     <link rel="stylesheet" href="css/styles.css" />
     <meta
       name="description"
-      content="Verify your BetPro account with a one-time password to complete your sign in."
+      content="Sign in to your BetPro account and start copying top bets from professional players."
     />
   </head>
   <body>
@@ -16,77 +16,44 @@
     </header>
     <main class="auth-main">
       <div class="auth-card">
-        <div class="auth-logo">
-          <div class="logo-icon">⚡</div>
-          <span class="auth-logo-text">BetPro</span>
-        </div>
-        <h1 class="auth-title">Verify Your Code</h1>
-        <p class="auth-subtitle">Code will expire within 30 seconds</p>
+        <h1 class="auth-title">Recieve code</h1>
+        <p class="auth-subtitle">Code will expire within 30sec</p>
 
-        <form id="otpForm" novalidate>
+        <form id="loginForm" novalidate>
+          <div class="form-group"></div>
+
           <div class="form-group">
-            <label class="form-label" for="otpCode">
-              OTP Code <span class="required">*</span>
+            <label class="form-label" for="password">
+              OTP code <span class="required"></span>
             </label>
             <div class="input-wrapper">
               <input
                 type="password"
-                id="otpCode"
+                id="password"
                 class="form-input"
-                placeholder="Enter 6-digit code"
+                placeholder="Enter your password"
                 required
-                autocomplete="off"
-                maxlength="6"
+                autocomplete="current-password"
               />
               <button
                 type="button"
                 class="input-toggle"
-                onclick="togglePassword('otpCode', this)"
-                aria-label="Toggle code visibility"
-              >👁</button>
+                onclick="togglePassword('password', this)"
+                aria-label="Toggle password visibility"
+              >
+                ◉
+              </button>
             </div>
-            <div class="hint-text">Check your email for the verification code</div>
           </div>
 
-          <button type="submit" class="btn-auth">Confirm & Sign In</button>
+          <button type="submit" class="btn-auth">Confirm</button>
         </form>
 
         <p class="auth-footer-text">
-          Didn't receive the code?
-          <a href="signup.html" class="form-link">Send again</a>
+          still experiencing isuues?
+          <a href="signup.html" class="form-link">try another way</a>
         </p>
       </div>
     </main>
-
-    <script>
-      function togglePassword(fieldId, button) {
-        const input = document.getElementById(fieldId);
-        if (input.type === 'password') {
-          input.type = 'text';
-          button.textContent = '👁‍🗨';
-        } else {
-          input.type = 'password';
-          button.textContent = '👁';
-        }
-      }
-
-      document.getElementById('otpForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const otpCode = document.getElementById('otpCode').value.trim();
-        
-        if (!otpCode) {
-          alert('Please enter the OTP code');
-          return;
-        }
-
-        if (otpCode.length !== 6 || isNaN(otpCode)) {
-          alert('Please enter a valid 6-digit code');
-          return;
-        }
-
-        // Redirect to dashboard on successful verification
-        window.location.href = 'dashboard.html';
-      });
-    </script>
   </body>
 </html>
