@@ -3,57 +3,208 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>otp page</title>
+    <title>Verify OTP | BetPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <meta
-      name="description"
-      content="Sign in to your BetPro account and start copying top bets from professional players."
-    />
   </head>
   <body>
     <header class="auth-header">
-      <a href="index.html" class="auth-back">&#8592; Back to Home</a>
+      <a href="login.html" class="auth-back">← Back to Sign In</a>
     </header>
+
     <main class="auth-main">
-      <div class="auth-card">
-        <h1 class="auth-title">Recieve code</h1>
-        <p class="auth-subtitle">Code will expire within 30sec</p>
+      <div class="auth-card" style="max-width: 400px;">
+        <a href="index.html" class="auth-logo">
+          <div class="logo-icon">◆</div>
+          <span class="auth-logo-text">BetPro</span>
+        </a>
 
-        <form id="loginForm" novalidate>
-          <div class="form-group"></div>
-
-          <div class="form-group">
-            <label class="form-label" for="password">
-              OTP code <span class="required"></span>
-            </label>
-            <div class="input-wrapper">
-              <input
-                type="password"
-                id="password"
-                class="form-input"
-                placeholder="Enter your password"
-                required
-                autocomplete="current-password"
-              />
-              <button
-                type="button"
-                class="input-toggle"
-                onclick="togglePassword('password', this)"
-                aria-label="Toggle password visibility"
-              >
-                ◉
-              </button>
-            </div>
+        <!-- Shield icon -->
+        <div style="text-align:center; margin-bottom:20px;">
+          <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(168,85,247,0.1));border:2px solid rgba(108,99,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto;box-shadow:0 0 32px rgba(108,99,255,0.2);animation:pulse 2s ease-in-out infinite;">
+            🔐
           </div>
+        </div>
 
-          <button type="submit" class="btn-auth">Confirm</button>
-        </form>
+        <h1 class="auth-title">Verify Your Identity</h1>
+        <p class="auth-subtitle">We sent a 6-digit code to your email.<br>Enter it below to continue.</p>
+
+        <!-- OTP Inputs -->
+        <div class="otp-inputs" id="otpInputs">
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="one-time-code" />
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+          <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        </div>
+
+        <!-- Timer -->
+        <div class="otp-timer">
+          Code expires in <span id="timerDisplay">01:30</span>
+        </div>
+
+        <div id="formError" style="display:none;color:#ef4444;font-size:13px;font-weight:600;margin-bottom:12px;text-align:center;padding:10px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;"></div>
+
+        <button type="button" class="btn-auth" id="confirmBtn" onclick="verifyOTP()" disabled style="opacity:0.5;cursor:not-allowed;">
+          Verify &amp; Continue
+        </button>
+
+        <div class="otp-resend">
+          Didn't receive the code?
+          <button type="button" id="resendBtn" onclick="resendCode()" style="background:none;border:none;color:var(--primary-light);font-weight:600;font-size:13px;cursor:pointer;padding:0;transition:color 0.2s;" disabled>
+            Resend code
+          </button>
+        </div>
 
         <p class="auth-footer-text">
-          still experiencing isuues?
-          <a href="signup.html" class="form-link">try another way</a>
+          Still experiencing issues?
+          <a href="signup.html" class="form-link">Try another way</a>
         </p>
       </div>
     </main>
+
+    <script>
+      // --- OTP Box Logic ---
+      const boxes = Array.from(document.querySelectorAll('.otp-box'));
+      const confirmBtn = document.getElementById('confirmBtn');
+
+      boxes.forEach((box, i) => {
+        box.addEventListener('input', (e) => {
+          const val = e.target.value.replace(/\D/g, '');
+          e.target.value = val;
+
+          if (val) {
+            box.classList.add('filled');
+            if (i < boxes.length - 1) boxes[i + 1].focus();
+          } else {
+            box.classList.remove('filled');
+          }
+          checkComplete();
+        });
+
+        box.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !box.value && i > 0) {
+            boxes[i - 1].focus();
+            boxes[i - 1].value = '';
+            boxes[i - 1].classList.remove('filled');
+            checkComplete();
+          }
+        });
+
+        box.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+          pasted.split('').forEach((char, idx) => {
+            if (boxes[idx]) {
+              boxes[idx].value = char;
+              boxes[idx].classList.add('filled');
+            }
+          });
+          const nextEmpty = boxes.findIndex(b => !b.value);
+          if (nextEmpty !== -1) boxes[nextEmpty].focus();
+          else boxes[boxes.length - 1].focus();
+          checkComplete();
+        });
+
+        box.addEventListener('focus', () => box.select());
+      });
+
+      function checkComplete() {
+        const complete = boxes.every(b => b.value.length === 1);
+        confirmBtn.disabled = !complete;
+        confirmBtn.style.opacity = complete ? '1' : '0.5';
+        confirmBtn.style.cursor = complete ? 'pointer' : 'not-allowed';
+      }
+
+      function verifyOTP() {
+        const code = boxes.map(b => b.value).join('');
+        if (code.length < 6) return;
+
+        confirmBtn.innerHTML = '<span style="animation:spin 0.8s linear infinite;display:inline-block">⟳</span> Verifying...';
+        confirmBtn.disabled = true;
+
+        // Animate boxes on success
+        setTimeout(() => {
+          boxes.forEach((box, i) => {
+            setTimeout(() => {
+              box.style.borderColor = '#10b981';
+              box.style.background = 'rgba(16,185,129,0.12)';
+              box.style.boxShadow = '0 0 12px rgba(16,185,129,0.3)';
+              box.style.transform = 'scale(1.1)';
+            }, i * 80);
+          });
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 600);
+        }, 1000);
+      }
+
+      // --- Countdown Timer ---
+      let seconds = 90;
+      const timerDisplay = document.getElementById('timerDisplay');
+      const resendBtn = document.getElementById('resendBtn');
+
+      function updateTimer() {
+        const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const s = (seconds % 60).toString().padStart(2, '0');
+        timerDisplay.textContent = `${m}:${s}`;
+
+        if (seconds <= 0) {
+          timerDisplay.textContent = 'Expired';
+          timerDisplay.style.color = '#ef4444';
+          clearInterval(timerInterval);
+          resendBtn.disabled = false;
+          resendBtn.style.opacity = '1';
+        } else if (seconds <= 20) {
+          timerDisplay.style.color = '#ef4444';
+        } else if (seconds <= 40) {
+          timerDisplay.style.color = '#f59e0b';
+        }
+        seconds--;
+      }
+
+      const timerInterval = setInterval(updateTimer, 1000);
+      updateTimer();
+
+      function resendCode() {
+        // Reset timer
+        seconds = 90;
+        timerDisplay.style.color = '';
+        resendBtn.disabled = true;
+        resendBtn.style.opacity = '0.5';
+        boxes.forEach(b => { b.value = ''; b.classList.remove('filled'); b.style = ''; });
+        boxes[0].focus();
+        checkComplete();
+
+        clearInterval(timerInterval);
+        seconds = 90;
+        const newInterval = setInterval(updateTimer, 1000);
+
+        // Show toast
+        showToast('New code sent to your email!', 'success');
+      }
+
+      function showToast(msg, type) {
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<span>${type === 'success' ? '✅' : '❌'}</span> ${msg}`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateX(20px)';
+          t.style.transition = 'all 0.3s ease';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }
+
+      // Focus first box on load
+      setTimeout(() => boxes[0].focus(), 300);
+    </script>
+    <style>
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
   </body>
 </html>

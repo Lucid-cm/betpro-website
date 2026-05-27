@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Odds | BetPro - Top Player Bets</title>
+    <title>Live Odds | BetPro</title>
     <meta name="description" content="Browse real-time odds from verified top players on BetPro. Updated every minute with instant copy functionality." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <a href="index.html" class="logo">
-        <div class="logo-icon">📊</div>
+        <div class="logo-icon">◆</div>
         <span>BetPro</span>
       </a>
       <nav>
@@ -24,147 +27,269 @@
         <a href="signup.html" class="btn-signup">Sign Up</a>
       </div>
     </header>
+
     <main>
       <div class="container max-width">
-        <h1>Live <span class="highlight">Odds</span></h1>
-        <p class="subtitle">
-          Real-time odds from top players. Updated every minute with instant
-          copy functionality.
-        </p>
-        <div class="filter-bar">
-          <button type="button" class="btn btn-small filter-btn active">⭐ All</button>
-          <button type="button" class="btn btn-small filter-btn">🏆 Top Rated</button>
-          <button type="button" class="btn btn-small filter-btn">📈 Trending</button>
-          <button type="button" class="btn btn-small filter-btn">⏰ New</button>
-          <button type="button" class="btn btn-small filter-btn">🔥 Hot Bets</button>
+
+        <div style="text-align:center; margin-bottom:8px;">
+          <div class="hero-badge" style="display:inline-flex; margin-bottom:16px;">
+            <span class="hero-badge-dot"></span>
+            Updated Every 60 Seconds
+          </div>
         </div>
-        <div class="odds-grid">
-          <div class="odds-card">
+
+        <h1>Live <span class="highlight">Odds</span></h1>
+        <p class="subtitle">Real-time odds from verified top players. Updated every minute with instant copy functionality.</p>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <button type="button" class="filter-btn active" onclick="filterOdds(this, 'all')">⭐ All</button>
+          <button type="button" class="filter-btn" onclick="filterOdds(this, 'top')">🏆 Top Rated</button>
+          <button type="button" class="filter-btn" onclick="filterOdds(this, 'trending')">📈 Trending</button>
+          <button type="button" class="filter-btn" onclick="filterOdds(this, 'new')">🆕 New</button>
+          <button type="button" class="filter-btn" onclick="filterOdds(this, 'hot')">🔥 Hot Bets</button>
+        </div>
+
+        <!-- Odds Grid -->
+        <div class="odds-grid" id="oddsGrid">
+          <div class="odds-card" data-tag="top">
             <div class="odds-header">
+              <div class="player-avatar">🏆</div>
               <div class="player-info">
-                <div class="player-name">🏆 ProTrader_Elite</div>
+                <div class="player-name">ProTrader_Elite</div>
                 <div class="player-stats">
                   <span class="stat-badge">⭐ 4.9 (2,340)</span>
-                  <span class="stat-badge">📊 +42%</span>
+                  <span class="stat-badge">+42%</span>
                 </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">1.95</div>
+                <div class="odds-type">Over 2.5</div>
               </div>
             </div>
             <div class="odds-details">
               <div class="detail-row">
-                <span class="detail-label">Match:</span>
+                <span class="detail-label">Match</span>
                 <span class="detail-value">Chelsea vs Liverpool</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Type:</span>
-                <span class="detail-value">Over 2.5 Goals</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Odds:</span>
-                <span class="detail-value odds-highlight">1.95</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Stake:</span>
+                <span class="detail-label">Stake</span>
                 <span class="detail-value">$500</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Confidence:</span>
+                <span class="detail-label">Confidence</span>
                 <span class="detail-value text-success font-bold">Very High (95%)</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Followers:</span>
+                <span class="detail-label">Followers</span>
                 <span class="detail-value text-primary">1,240+</span>
               </div>
             </div>
             <div class="odds-actions">
-              <button type="button" class="copy-btn">📋 Copy Bet</button>
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
               <button type="button" class="view-btn">View Profile</button>
             </div>
           </div>
-          <div class="odds-card">
+
+          <div class="odds-card" data-tag="hot">
             <div class="odds-header">
+              <div class="player-avatar">💎</div>
               <div class="player-info">
-                <div class="player-name">💎 LuckyStreak_99</div>
+                <div class="player-name">LuckyStreak_99</div>
                 <div class="player-stats">
                   <span class="stat-badge">⭐ 4.8</span>
-                  <span class="stat-badge">📊 +38%</span>
+                  <span class="stat-badge">+38%</span>
                 </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">2.10</div>
+                <div class="odds-type">BTTS</div>
               </div>
             </div>
             <div class="odds-details">
               <div class="detail-row">
-                <span class="detail-label">Match:</span>
+                <span class="detail-label">Match</span>
                 <span class="detail-value">Man City vs Arsenal</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Type:</span>
-                <span class="detail-value">Both Teams Score</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Odds:</span>
-                <span class="detail-value odds-highlight">2.10</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Stake:</span>
+                <span class="detail-label">Stake</span>
                 <span class="detail-value">$750</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Confidence:</span>
+                <span class="detail-label">Confidence</span>
                 <span class="detail-value text-success">Very High (92%)</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Followers:</span>
+                <span class="detail-label">Followers</span>
                 <span class="detail-value text-primary">980+</span>
               </div>
             </div>
             <div class="odds-actions">
-              <button type="button" class="copy-btn">📋 Copy Bet</button>
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
               <button type="button" class="view-btn">View Profile</button>
             </div>
           </div>
-          <div class="odds-card">
+
+          <div class="odds-card" data-tag="trending">
             <div class="odds-header">
+              <div class="player-avatar">🔥</div>
               <div class="player-info">
-                <div class="player-name">🔥 BettingKing_01</div>
+                <div class="player-name">BettingKing_01</div>
                 <div class="player-stats">
                   <span class="stat-badge">⭐ 4.7</span>
-                  <span class="stat-badge">📊 +35%</span>
+                  <span class="stat-badge">+35%</span>
                 </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">1.85</div>
+                <div class="odds-type">1X2</div>
               </div>
             </div>
             <div class="odds-details">
               <div class="detail-row">
-                <span class="detail-label">Match:</span>
+                <span class="detail-label">Match</span>
                 <span class="detail-value">Barcelona vs Real Madrid</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Type:</span>
-                <span class="detail-value">1X2 - Barcelona</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Odds:</span>
-                <span class="detail-value odds-highlight">1.85</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Stake:</span>
+                <span class="detail-label">Stake</span>
                 <span class="detail-value">$600</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Confidence:</span>
+                <span class="detail-label">Confidence</span>
                 <span class="detail-value text-warning">High (88%)</span>
               </div>
               <div class="detail-row">
-                <span class="detail-label">Followers:</span>
+                <span class="detail-label">Followers</span>
                 <span class="detail-value text-primary">750+</span>
               </div>
             </div>
             <div class="odds-actions">
-              <button type="button" class="copy-btn">📋 Copy Bet</button>
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
+              <button type="button" class="view-btn">View Profile</button>
+            </div>
+          </div>
+
+          <div class="odds-card" data-tag="new">
+            <div class="odds-header">
+              <div class="player-avatar">⚡</div>
+              <div class="player-info">
+                <div class="player-name">QuickWinz_42</div>
+                <div class="player-stats">
+                  <span class="stat-badge">⭐ 4.6</span>
+                  <span class="stat-badge">+32%</span>
+                </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">2.45</div>
+                <div class="odds-type">Draw</div>
+              </div>
+            </div>
+            <div class="odds-details">
+              <div class="detail-row">
+                <span class="detail-label">Match</span>
+                <span class="detail-value">PSG vs Bayern Munich</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Stake</span>
+                <span class="detail-value">$400</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Confidence</span>
+                <span class="detail-value text-warning">High (82%)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Followers</span>
+                <span class="detail-value text-primary">620+</span>
+              </div>
+            </div>
+            <div class="odds-actions">
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
+              <button type="button" class="view-btn">View Profile</button>
+            </div>
+          </div>
+
+          <div class="odds-card" data-tag="hot">
+            <div class="odds-header">
+              <div class="player-avatar">🎯</div>
+              <div class="player-info">
+                <div class="player-name">AccuracyMaster</div>
+                <div class="player-stats">
+                  <span class="stat-badge">⭐ 4.5</span>
+                  <span class="stat-badge">+29%</span>
+                </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">1.72</div>
+                <div class="odds-type">Home Win</div>
+              </div>
+            </div>
+            <div class="odds-details">
+              <div class="detail-row">
+                <span class="detail-label">Match</span>
+                <span class="detail-value">Juventus vs Inter Milan</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Stake</span>
+                <span class="detail-value">$350</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Confidence</span>
+                <span class="detail-value text-success">Very High (90%)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Followers</span>
+                <span class="detail-value text-primary">480+</span>
+              </div>
+            </div>
+            <div class="odds-actions">
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
+              <button type="button" class="view-btn">View Profile</button>
+            </div>
+          </div>
+
+          <div class="odds-card" data-tag="trending">
+            <div class="odds-header">
+              <div class="player-avatar">💰</div>
+              <div class="player-info">
+                <div class="player-name">ProfitSeeker_77</div>
+                <div class="player-stats">
+                  <span class="stat-badge">⭐ 4.4</span>
+                  <span class="stat-badge">+26%</span>
+                </div>
+              </div>
+              <div class="odds-value">
+                <div class="odds-rate">3.20</div>
+                <div class="odds-type">Over 3.5</div>
+              </div>
+            </div>
+            <div class="odds-details">
+              <div class="detail-row">
+                <span class="detail-label">Match</span>
+                <span class="detail-value">Liverpool vs Man United</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Stake</span>
+                <span class="detail-value">$300</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Confidence</span>
+                <span class="detail-value text-warning">Medium (75%)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Followers</span>
+                <span class="detail-value text-primary">390+</span>
+              </div>
+            </div>
+            <div class="odds-actions">
+              <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
               <button type="button" class="view-btn">View Profile</button>
             </div>
           </div>
         </div>
+
       </div>
     </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-links">
@@ -175,10 +300,52 @@
           <a href="#contact">Contact</a>
           <a href="#blog">Blog</a>
         </div>
-        <div class="footer-bottom">
-          © 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling
-        </div>
+        <div class="footer-bottom">© 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling</div>
       </div>
     </footer>
+
+    <script>
+      function copyBet(btn) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ Copied!';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #06b6d4)';
+        btn.style.color = 'white';
+        btn.style.borderColor = 'transparent';
+        showToast('Bet copied successfully!', 'success');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      }
+
+      function filterOdds(activeBtn, tag) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        activeBtn.classList.add('active');
+
+        document.querySelectorAll('.odds-card').forEach(card => {
+          if (tag === 'all' || card.dataset.tag === tag) {
+            card.style.display = '';
+            card.style.animation = 'cardReveal 0.4s ease both';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      function showToast(msg, type) {
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<span>${type === 'success' ? '✅' : '❌'}</span> ${msg}`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateX(20px)';
+          t.style.transition = 'all 0.3s ease';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }
+    </script>
   </body>
 </html>
