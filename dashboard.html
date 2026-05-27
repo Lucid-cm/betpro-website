@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | BetPro - Your Betting Hub</title>
+    <title>Dashboard | BetPro</title>
     <meta name="description" content="Manage your BetPro portfolio, track performance, view recent activity, and monitor your copied players." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <a href="index.html" class="logo">
-        <div class="logo-icon">📊</div><span>BetPro</span>
+        <div class="logo-icon">◆</div>
+        <span>BetPro</span>
       </a>
       <nav>
         <a href="index.html">Home</a>
@@ -19,90 +23,188 @@
         <a href="leaderboard.html">Leaderboard</a>
       </nav>
       <div class="nav-buttons">
-        <a href="#" class="btn-login">Profile</a>
-        <a href="index.html" class="btn-signup">Logout</a>
+        <a href="#" class="btn-login">👤 Profile</a>
+        <a href="index.html" class="btn-signup">Log Out</a>
       </div>
     </header>
+
     <main>
       <div class="container max-width">
-        <h1>Your <span class="highlight">Dashboard</span></h1>
-        <p class="subtitle">Welcome back! Here's your betting performance overview.</p>
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value text-primary">$12,450</div>
-            <div class="metric-label">Total Balance</div>
+
+        <!-- Welcome Header -->
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:8px;">
+          <div>
+            <div class="hero-badge" style="display:inline-flex; margin-bottom:10px;">
+              <span class="hero-badge-dot"></span>
+              Live Dashboard
+            </div>
+            <h1 style="text-align:left; font-size:clamp(28px,5vw,48px); margin-bottom:6px;">
+              Your <span class="highlight">Dashboard</span>
+            </h1>
+            <p class="subtitle" style="text-align:left; margin:0; font-size:15px;">Welcome back! Here's your betting performance overview.</p>
           </div>
-          <div class="metric-card">
-            <div class="metric-value text-success">+$3,200</div>
-            <div class="metric-label">This Month</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value text-primary">82%</div>
-            <div class="metric-label">Win Rate</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value text-warning">156</div>
-            <div class="metric-label">Bets Copied</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="copy-betting.html" class="btn btn-primary btn-small">+ Copy Player</a>
+            <a href="odds.html" class="btn btn-secondary btn-small">Browse Odds</a>
           </div>
         </div>
-        <section class="section">
+
+        <!-- Metrics Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value text-primary" data-target="12450" data-prefix="$">$12,450</div>
+            <div class="metric-label">💼 Total Balance</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value text-success" data-target="3200" data-prefix="+$">+$3,200</div>
+            <div class="metric-label">📈 This Month</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value text-primary" data-target="82" data-suffix="%">82%</div>
+            <div class="metric-label">🎯 Win Rate</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value text-warning" data-target="156">156</div>
+            <div class="metric-label">📋 Bets Copied</div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <section class="section reveal">
           <h2 class="section-title">Recent Activity</h2>
           <div class="activity-list">
             <div class="activity-row">
               <div>
-                <div class="activity-title">✅ Bet Won: Chelsea vs Liverpool - Over 2.5 Goals</div>
-                <div class="activity-meta">ProTrader_Elite • 2 hours ago</div>
+                <div class="activity-title">✅ Bet Won — Chelsea vs Liverpool · Over 2.5 Goals</div>
+                <div class="activity-meta">ProTrader_Elite &nbsp;·&nbsp; 2 hours ago &nbsp;·&nbsp; Odds 1.95</div>
               </div>
               <div class="activity-amount text-success">+$475</div>
             </div>
             <div class="activity-row">
               <div>
-                <div class="activity-title">❌ Bet Lost: Man City vs Arsenal - Both Teams Score</div>
-                <div class="activity-meta">LuckyStreak_99 • 4 hours ago</div>
+                <div class="activity-title">❌ Bet Lost — Man City vs Arsenal · Both Teams Score</div>
+                <div class="activity-meta">LuckyStreak_99 &nbsp;·&nbsp; 4 hours ago &nbsp;·&nbsp; Odds 2.10</div>
               </div>
-              <div class="activity-amount text-danger">-$250</div>
+              <div class="activity-amount text-danger">−$250</div>
             </div>
             <div class="activity-row">
               <div>
-                <div class="activity-title">✅ Bet Won: Barcelona vs Real Madrid - Barcelona Win</div>
-                <div class="activity-meta">BettingKing_01 • 8 hours ago</div>
+                <div class="activity-title">✅ Bet Won — Barcelona vs Real Madrid · Barcelona Win</div>
+                <div class="activity-meta">BettingKing_01 &nbsp;·&nbsp; 8 hours ago &nbsp;·&nbsp; Odds 1.85</div>
               </div>
               <div class="activity-amount text-success">+$510</div>
             </div>
             <div class="activity-row">
               <div>
-                <div class="activity-title">📋 Bet Copied: Liverpool vs Man United</div>
-                <div class="activity-meta">QuickWinz_42 • Pending</div>
+                <div class="activity-title">📋 Bet Copied — Liverpool vs Man United · 1X2</div>
+                <div class="activity-meta">QuickWinz_42 &nbsp;·&nbsp; Pending</div>
               </div>
-              <div class="activity-amount text-warning">-$200</div>
+              <div class="activity-amount text-warning">−$200</div>
             </div>
           </div>
         </section>
-        <section class="section">
+
+        <!-- Your Players -->
+        <section class="section reveal">
           <h2 class="section-title">Your Players</h2>
           <div class="odds-grid">
             <div class="odds-card">
               <div class="odds-header">
+                <div class="player-avatar">🏆</div>
                 <div class="player-info">
-                  <div class="player-name">🏆 ProTrader_Elite</div>
+                  <div class="player-name">ProTrader_Elite</div>
                   <div class="player-stats">
-                    <span class="stat-badge">Copied Bet: $300</span>
-                    <span class="stat-badge">Win Rate: 87%</span>
+                    <span class="stat-badge">$300/bet</span>
+                    <span class="stat-badge">87% WR</span>
                   </div>
                 </div>
               </div>
               <div class="odds-details">
                 <div class="detail-row">
-                  <span class="detail-label">Total Profit:</span>
+                  <span class="detail-label">Total Profit</span>
                   <span class="detail-value text-success font-bold">+$2,450</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Copied Bets:</span>
-                  <span class="detail-value">45</span>
+                  <span class="detail-label">Copied Bets</span>
+                  <span class="detail-value">45 bets</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Won:</span>
-                  <span class="detail-value text-success">39</span>
+                  <span class="detail-label">Won / Lost</span>
+                  <span class="detail-value"><span class="text-success">39</span> / <span class="text-danger">6</span></span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Status</span>
+                  <span class="detail-value text-success">Active ✓</span>
+                </div>
+              </div>
+              <div class="odds-actions">
+                <button type="button" class="copy-btn">📊 View Stats</button>
+                <button type="button" class="view-btn">⚙️ Settings</button>
+              </div>
+            </div>
+
+            <div class="odds-card">
+              <div class="odds-header">
+                <div class="player-avatar">💎</div>
+                <div class="player-info">
+                  <div class="player-name">LuckyStreak_99</div>
+                  <div class="player-stats">
+                    <span class="stat-badge">$250/bet</span>
+                    <span class="stat-badge">82% WR</span>
+                  </div>
+                </div>
+              </div>
+              <div class="odds-details">
+                <div class="detail-row">
+                  <span class="detail-label">Total Profit</span>
+                  <span class="detail-value text-success font-bold">+$1,830</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Copied Bets</span>
+                  <span class="detail-value">38 bets</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Won / Lost</span>
+                  <span class="detail-value"><span class="text-success">31</span> / <span class="text-danger">7</span></span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Status</span>
+                  <span class="detail-value text-success">Active ✓</span>
+                </div>
+              </div>
+              <div class="odds-actions">
+                <button type="button" class="copy-btn">📊 View Stats</button>
+                <button type="button" class="view-btn">⚙️ Settings</button>
+              </div>
+            </div>
+
+            <div class="odds-card">
+              <div class="odds-header">
+                <div class="player-avatar">🔥</div>
+                <div class="player-info">
+                  <div class="player-name">BettingKing_01</div>
+                  <div class="player-stats">
+                    <span class="stat-badge">$200/bet</span>
+                    <span class="stat-badge">79% WR</span>
+                  </div>
+                </div>
+              </div>
+              <div class="odds-details">
+                <div class="detail-row">
+                  <span class="detail-label">Total Profit</span>
+                  <span class="detail-value text-success font-bold">+$920</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Copied Bets</span>
+                  <span class="detail-value">28 bets</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Won / Lost</span>
+                  <span class="detail-value"><span class="text-success">22</span> / <span class="text-danger">6</span></span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Status</span>
+                  <span class="detail-value text-success">Active ✓</span>
                 </div>
               </div>
               <div class="odds-actions">
@@ -112,8 +214,10 @@
             </div>
           </div>
         </section>
+
       </div>
     </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-links">
@@ -127,5 +231,40 @@
         <div class="footer-bottom">© 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling</div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => observer.observe(el));
+
+      // Animated counter
+      function animateCount(el, target, prefix, suffix, duration = 1200) {
+        let start = 0;
+        const step = target / (duration / 16);
+        const timer = setInterval(() => {
+          start = Math.min(start + step, target);
+          const formatted = Math.round(start).toLocaleString();
+          el.textContent = (prefix || '') + formatted + (suffix || '');
+          if (start >= target) clearInterval(timer);
+        }, 16);
+      }
+
+      setTimeout(() => {
+        document.querySelectorAll('[data-target]').forEach(el => {
+          const target = parseInt(el.dataset.target);
+          const prefix = el.dataset.prefix || '';
+          const suffix = el.dataset.suffix || '';
+          animateCount(el, target, prefix, suffix);
+        });
+      }, 400);
+    </script>
   </body>
 </html>

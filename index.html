@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BetPro - Copy Trading Platform | Top Odds & Expert Bets</title>
-    <meta
-      name="description"
-      content="Copy bets from top professional players. Real-time odds, proven strategies, and passive income."
-    />
+    <meta name="description" content="Copy bets from top professional players. Real-time odds, proven strategies, and passive income." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -30,236 +30,238 @@
 
     <main>
       <div class="container max-width">
+
+        <!-- HERO SECTION -->
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Live Now — 50K+ Players Earning
+        </div>
+
         <h1>
-          Copy Bets From
-          <br />
+          Copy Bets From<br />
           <span class="highlight">Top Players</span>
         </h1>
+
         <p class="subtitle">
-          Follow professional bettors in real-time. Copy their odds, strategies,
-          and win more. Join 50K+ players already earning passive income.
+          Follow professional bettors in real-time. Copy their strategies,
+          win more, and earn passive income effortlessly.
         </p>
 
         <div class="cta-container">
-          <button type="button" class="btn btn-primary">
-            Start Copying Now
-          </button>
-          <button type="button" class="btn btn-secondary">Watch Demo</button>
+          <a href="signup.html" class="btn btn-primary">
+            🚀 Start Copying Now
+          </a>
+          <a href="odds.html" class="btn btn-secondary">
+            👁 Watch Live Odds
+          </a>
         </div>
 
+        <!-- STATS ROW -->
         <div class="features">
           <div class="feature">
-            <div class="feature-number">50K+</div>
+            <div class="feature-number" data-count="50000" data-suffix="K+">50K+</div>
             <div class="feature-text">Active Players</div>
           </div>
           <div class="feature">
-            <div class="feature-number">10,000+</div>
+            <div class="feature-number" data-count="10000" data-suffix="+">10,000+</div>
             <div class="feature-text">Daily Odds</div>
           </div>
           <div class="feature">
             <div class="feature-number">99.9%</div>
             <div class="feature-text">Uptime</div>
           </div>
+          <div class="feature">
+            <div class="feature-number" data-count="75" data-suffix="%">75%</div>
+            <div class="feature-text">Avg Win Rate</div>
+          </div>
         </div>
 
-        <!-- HOW IT WORKS SECTION -->
-        <section class="section mt-30">
+        <!-- HOW IT WORKS -->
+        <section class="section reveal">
           <h2 class="section-title">How It Works</h2>
           <div class="features">
             <div class="feature">
-              <div style="font-size: 32px; margin-bottom: 10px">◉</div>
+              <div class="feature-icon">🔍</div>
               <h3>Browse Top Odds</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Discover odds from verified top players with proven track
-                records.
-              </p>
+              <p class="feature-text">Discover odds from verified top players with proven track records.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 32px; margin-bottom: 10px">▢</div>
+              <div class="feature-icon">⚡</div>
               <h3>Copy Instantly</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                One click to copy any bet. Automatic sync with your betting
-                account.
-              </p>
+              <p class="feature-text">One click to copy any bet. Automatic sync with your betting account.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 32px; margin-bottom: 10px">◈</div>
+              <div class="feature-icon">💰</div>
               <h3>Earn Passive Income</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Sit back and earn profits from expert strategies.
-              </p>
+              <p class="feature-text">Sit back and earn profits from expert strategies around the clock.</p>
             </div>
           </div>
         </section>
 
-        <!-- FEATURED PLAYERS SECTION -->
-        <section class="section">
-          <h2 class="section-title">Featured Players This Week</h2>
+        <!-- FEATURED PLAYERS -->
+        <section class="section reveal">
+          <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:28px; flex-wrap:wrap;">
+            <h2 style="margin-bottom:0">Featured Players This Week</h2>
+            <span class="live-badge">Live</span>
+          </div>
+
           <div class="odds-grid">
             <div class="odds-card">
               <div class="odds-header">
+                <div class="player-avatar">🏆</div>
                 <div class="player-info">
-                  <div class="player-name">★ ProTrader_Elite</div>
+                  <div class="player-name">ProTrader_Elite</div>
                   <div class="player-stats">
-                    <span class="stat-badge">★ 4.9</span>
-                    <span class="stat-badge">◆ +42%</span>
+                    <span class="stat-badge">⭐ 4.9</span>
+                    <span class="stat-badge">📈 +42%</span>
+                    <span class="stat-badge">87% WR</span>
                   </div>
                 </div>
               </div>
               <div class="odds-details">
                 <div class="detail-row">
-                  <span class="detail-label">Match:</span>
+                  <span class="detail-label">Match</span>
                   <span class="detail-value">Chelsea vs Liverpool</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Type:</span>
+                  <span class="detail-label">Type</span>
                   <span class="detail-value">Over 2.5 Goals</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Odds:</span>
-                  <span class="detail-value">1.95</span>
+                  <span class="detail-label">Odds</span>
+                  <span class="detail-value odds-highlight">1.95</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Confidence:</span>
-                  <span class="detail-value text-success">Very High</span>
+                  <span class="detail-label">Confidence</span>
+                  <span class="detail-value text-success">Very High (95%)</span>
                 </div>
               </div>
               <div class="odds-actions">
-                <button type="button" class="copy-btn">▢ Copy Bet</button>
+                <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
                 <button type="button" class="view-btn">View More</button>
               </div>
             </div>
 
             <div class="odds-card">
               <div class="odds-header">
+                <div class="player-avatar">💎</div>
                 <div class="player-info">
-                  <div class="player-name">◆ LuckyStreak_99</div>
+                  <div class="player-name">LuckyStreak_99</div>
                   <div class="player-stats">
-                    <span class="stat-badge">★ 4.8</span>
-                    <span class="stat-badge">◆ +38%</span>
+                    <span class="stat-badge">⭐ 4.8</span>
+                    <span class="stat-badge">📈 +38%</span>
+                    <span class="stat-badge">82% WR</span>
                   </div>
                 </div>
               </div>
               <div class="odds-details">
                 <div class="detail-row">
-                  <span class="detail-label">Match:</span>
+                  <span class="detail-label">Match</span>
                   <span class="detail-value">Man City vs Arsenal</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Type:</span>
+                  <span class="detail-label">Type</span>
                   <span class="detail-value">Both Teams Score</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Odds:</span>
-                  <span class="detail-value">2.10</span>
+                  <span class="detail-label">Odds</span>
+                  <span class="detail-value odds-highlight">2.10</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Confidence:</span>
-                  <span class="detail-value text-success">Very High</span>
+                  <span class="detail-label">Confidence</span>
+                  <span class="detail-value text-success">Very High (92%)</span>
                 </div>
               </div>
               <div class="odds-actions">
-                <button type="button" class="copy-btn">▢ Copy Bet</button>
+                <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
                 <button type="button" class="view-btn">View More</button>
               </div>
             </div>
 
             <div class="odds-card">
               <div class="odds-header">
+                <div class="player-avatar">🔥</div>
                 <div class="player-info">
-                  <div class="player-name">● BettingKing_01</div>
+                  <div class="player-name">BettingKing_01</div>
                   <div class="player-stats">
-                    <span class="stat-badge">★ 4.7</span>
-                    <span class="stat-badge">◆ +35%</span>
+                    <span class="stat-badge">⭐ 4.7</span>
+                    <span class="stat-badge">📈 +35%</span>
+                    <span class="stat-badge">79% WR</span>
                   </div>
                 </div>
               </div>
               <div class="odds-details">
                 <div class="detail-row">
-                  <span class="detail-label">Match:</span>
+                  <span class="detail-label">Match</span>
                   <span class="detail-value">Barcelona vs Real Madrid</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Type:</span>
-                  <span class="detail-value">1X2 - Barcelona Win</span>
+                  <span class="detail-label">Type</span>
+                  <span class="detail-value">1X2 – Barcelona Win</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Odds:</span>
-                  <span class="detail-value">1.85</span>
+                  <span class="detail-label">Odds</span>
+                  <span class="detail-value odds-highlight">1.85</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label">Confidence:</span>
-                  <span class="detail-value text-warning">High</span>
+                  <span class="detail-label">Confidence</span>
+                  <span class="detail-value text-warning">High (88%)</span>
                 </div>
               </div>
               <div class="odds-actions">
-                <button type="button" class="copy-btn">▢ Copy Bet</button>
+                <button type="button" class="copy-btn" onclick="copyBet(this)">📋 Copy Bet</button>
                 <button type="button" class="view-btn">View More</button>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- WHY CHOOSE BETPRO SECTION -->
-        <section class="section">
+        <!-- WHY BETPRO -->
+        <section class="section reveal">
           <h2 class="section-title">Why Choose BetPro?</h2>
           <div class="features">
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">✓</div>
+              <div class="feature-icon">✅</div>
               <h3>Verified Players</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Only top-performing, verified bettors on our platform.
-              </p>
+              <p class="feature-text">Only top-performing, verified bettors on our platform.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">↻</div>
+              <div class="feature-icon">⚡</div>
               <h3>Real-Time Sync</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Copy bets instantly as professionals place them.
-              </p>
+              <p class="feature-text">Copy bets instantly as professionals place them.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">◈</div>
+              <div class="feature-icon">🔒</div>
               <h3>Secure & Safe</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Bank-level security for all transactions.
-              </p>
+              <p class="feature-text">Bank-level security for all transactions.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">▤</div>
+              <div class="feature-icon">📱</div>
               <h3>Mobile First</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Trade on the go with our mobile app.
-              </p>
+              <p class="feature-text">Trade on the go with our mobile app.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">◎</div>
+              <div class="feature-icon">💬</div>
               <h3>24/7 Support</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Expert support always ready to help.
-              </p>
+              <p class="feature-text">Expert support always ready to help.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px">◆</div>
+              <div class="feature-icon">📊</div>
               <h3>Premium Analytics</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px">
-                Advanced stats on every player's performance.
-              </p>
+              <p class="feature-text">Advanced stats on every player's performance.</p>
             </div>
           </div>
         </section>
 
         <!-- CTA SECTION -->
-        <section class="section mt-30 cta-section">
+        <section class="section mt-30 cta-section reveal">
           <h2>Ready to Start Earning?</h2>
-          <p>
-            Join thousands of players copying top bets and earning passive
-            income today.
-          </p>
-          <button type="button" class="btn btn-primary btn-on-gradient">
-            Get Started Free
-          </button>
+          <p>Join thousands of players copying top bets and earning passive income today. Free to start, no credit card needed.</p>
+          <a href="signup.html" class="btn btn-on-gradient">
+            🚀 Get Started Free
+          </a>
         </section>
+
       </div>
     </main>
 
@@ -273,10 +275,52 @@
           <a href="#contact">Contact</a>
           <a href="#blog">Blog</a>
         </div>
-        <div class="footer-bottom">
-          © 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling
-        </div>
+        <div class="footer-bottom">© 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling</div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => observer.observe(el));
+
+      // Copy bet interaction
+      function copyBet(btn) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ Copied!';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #06b6d4)';
+        btn.style.color = 'white';
+        btn.style.borderColor = 'transparent';
+        showToast('Bet copied successfully!', 'success');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      }
+
+      // Toast notification
+      function showToast(msg, type = 'success') {
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<span>${type === 'success' ? '✅' : '❌'}</span> ${msg}`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateX(20px)';
+          t.style.transition = 'all 0.3s ease';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }
+    </script>
   </body>
 </html>

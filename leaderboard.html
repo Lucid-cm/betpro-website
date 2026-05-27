@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard | BetPro - Top Players Rankings</title>
-    <meta name="description" content="See who's winning big this month on BetPro. Copy strategies from our top-ranked players and start earning." />
+    <meta name="description" content="See who's winning big this month on BetPro. Copy strategies from our top-ranked players." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <a href="index.html" class="logo">
-        <div class="logo-icon">📊</div><span>BetPro</span>
+        <div class="logo-icon">◆</div>
+        <span>BetPro</span>
       </a>
       <nav>
         <a href="index.html">Home</a>
@@ -23,121 +27,208 @@
         <a href="signup.html" class="btn-signup">Sign Up</a>
       </div>
     </header>
+
     <main>
       <div class="container max-width">
+
+        <div style="text-align:center; margin-bottom:8px;">
+          <div class="hero-badge" style="display:inline-flex; margin-bottom:16px;">
+            🏆 Top Performers — May 2026
+          </div>
+        </div>
+
         <h1>Player <span class="highlight">Leaderboard</span></h1>
         <p class="subtitle">See who's winning big this month. Copy their strategies and earn passive income.</p>
+
+        <!-- Filter Bar -->
         <div class="filter-bar">
-          <button type="button" class="btn btn-small filter-btn active">📊 This Month</button>
-          <button type="button" class="btn btn-small filter-btn">🏆 All Time</button>
-          <button type="button" class="btn btn-small filter-btn">🔥 This Week</button>
-          <button type="button" class="btn btn-small filter-btn">⭐ Top Rated</button>
+          <button type="button" class="filter-btn active">📊 This Month</button>
+          <button type="button" class="filter-btn">🏆 All Time</button>
+          <button type="button" class="filter-btn">🔥 This Week</button>
+          <button type="button" class="filter-btn">⭐ Top Rated</button>
         </div>
+
+        <!-- Top 3 Podium -->
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;">
+
+          <!-- 2nd Place -->
+          <div class="feature" style="order:1; border-color:rgba(160,160,180,0.3); background:linear-gradient(135deg,rgba(160,160,180,0.08),var(--bg-card));">
+            <div style="font-size:40px; margin-bottom:8px;">🥈</div>
+            <div style="font-size:22px; font-weight:900; margin-bottom:4px; color:var(--text-primary);">LuckyStreak_99</div>
+            <div style="font-size:28px; font-weight:900; color:#94a3b8; margin:8px 0;">+38%</div>
+            <div class="feature-text">1,890 followers · 82% win rate</div>
+            <button type="button" class="btn btn-secondary btn-small" style="margin-top:14px;" onclick="copyPlayer(this)">Copy Player</button>
+          </div>
+
+          <!-- 1st Place -->
+          <div class="feature glow-ring" style="order:0; border-color:rgba(245,158,11,0.4); background:linear-gradient(135deg,rgba(245,158,11,0.10),var(--bg-card)); transform:scale(1.04);">
+            <div style="font-size:48px; margin-bottom:8px;">🥇</div>
+            <div style="font-size:24px; font-weight:900; margin-bottom:4px; color:var(--text-primary);">ProTrader_Elite</div>
+            <div style="font-size:32px; font-weight:900; background:linear-gradient(135deg,#f59e0b,#f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin:8px 0;">+42%</div>
+            <div class="feature-text">2,340 followers · 87% win rate</div>
+            <button type="button" class="btn btn-primary btn-small" style="margin-top:14px;" onclick="copyPlayer(this)">🏆 Copy Player</button>
+          </div>
+
+          <!-- 3rd Place -->
+          <div class="feature" style="order:2; border-color:rgba(205,127,50,0.3); background:linear-gradient(135deg,rgba(205,127,50,0.08),var(--bg-card));">
+            <div style="font-size:40px; margin-bottom:8px;">🥉</div>
+            <div style="font-size:22px; font-weight:900; margin-bottom:4px; color:var(--text-primary);">BettingKing_01</div>
+            <div style="font-size:28px; font-weight:900; color:#cd7f32; margin:8px 0;">+35%</div>
+            <div class="feature-text">1,560 followers · 79% win rate</div>
+            <button type="button" class="btn btn-secondary btn-small" style="margin-top:14px;" onclick="copyPlayer(this)">Copy Player</button>
+          </div>
+        </div>
+
+        <!-- Full Leaderboard -->
         <div class="leaderboard">
-          <div class="lb-header">🏆 Top Performers This Month</div>
+          <div class="lb-header">🏆 Full Rankings — Top Performers This Month</div>
+
           <div class="lb-row">
             <div class="rank">🥇</div>
             <div class="lb-info">
               <div class="lb-name">ProTrader_Elite</div>
-              <div class="lb-stats">2,340 followers • 87% win rate • 142 bets</div>
+              <div class="lb-stats">2,340 followers &nbsp;·&nbsp; 87% win rate &nbsp;·&nbsp; 142 bets</div>
             </div>
-            <div class="lb-value">+42%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+42%</div>
+              <button type="button" class="btn btn-primary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
             <div class="rank">🥈</div>
             <div class="lb-info">
               <div class="lb-name">LuckyStreak_99</div>
-              <div class="lb-stats">1,890 followers • 82% win rate • 128 bets</div>
+              <div class="lb-stats">1,890 followers &nbsp;·&nbsp; 82% win rate &nbsp;·&nbsp; 128 bets</div>
             </div>
-            <div class="lb-value">+38%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+38%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
             <div class="rank">🥉</div>
             <div class="lb-info">
               <div class="lb-name">BettingKing_01</div>
-              <div class="lb-stats">1,560 followers • 79% win rate • 115 bets</div>
+              <div class="lb-stats">1,560 followers &nbsp;·&nbsp; 79% win rate &nbsp;·&nbsp; 115 bets</div>
             </div>
-            <div class="lb-value">+35%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+35%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">4</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">4</div>
             <div class="lb-info">
               <div class="lb-name">QuickWinz_42</div>
-              <div class="lb-stats">1,200 followers • 76% win rate • 98 bets</div>
+              <div class="lb-stats">1,200 followers &nbsp;·&nbsp; 76% win rate &nbsp;·&nbsp; 98 bets</div>
             </div>
-            <div class="lb-value">+32%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+32%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">5</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">5</div>
             <div class="lb-info">
               <div class="lb-name">AccuracyMaster</div>
-              <div class="lb-stats">980 followers • 72% win rate • 87 bets</div>
+              <div class="lb-stats">980 followers &nbsp;·&nbsp; 72% win rate &nbsp;·&nbsp; 87 bets</div>
             </div>
-            <div class="lb-value">+29%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+29%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">6</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">6</div>
             <div class="lb-info">
               <div class="lb-name">ProfitSeeker_77</div>
-              <div class="lb-stats">750 followers • 68% win rate • 76 bets</div>
+              <div class="lb-stats">750 followers &nbsp;·&nbsp; 68% win rate &nbsp;·&nbsp; 76 bets</div>
             </div>
-            <div class="lb-value">+26%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+26%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">7</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">7</div>
             <div class="lb-info">
               <div class="lb-name">WinnerCircle_23</div>
-              <div class="lb-stats">645 followers • 74% win rate • 92 bets</div>
+              <div class="lb-stats">645 followers &nbsp;·&nbsp; 74% win rate &nbsp;·&nbsp; 92 bets</div>
             </div>
-            <div class="lb-value">+24%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+24%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">8</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">8</div>
             <div class="lb-info">
               <div class="lb-name">StrategistPro_88</div>
-              <div class="lb-stats">520 followers • 71% win rate • 64 bets</div>
+              <div class="lb-stats">520 followers &nbsp;·&nbsp; 71% win rate &nbsp;·&nbsp; 64 bets</div>
             </div>
-            <div class="lb-value">+21%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+21%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">9</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">9</div>
             <div class="lb-info">
               <div class="lb-name">TrendKing_45</div>
-              <div class="lb-stats">480 followers • 69% win rate • 58 bets</div>
+              <div class="lb-stats">480 followers &nbsp;·&nbsp; 69% win rate &nbsp;·&nbsp; 58 bets</div>
             </div>
-            <div class="lb-value">+18%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+18%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
+
           <div class="lb-row">
-            <div class="rank">10</div>
+            <div class="rank" style="font-size:16px; font-weight:800;">10</div>
             <div class="lb-info">
               <div class="lb-name">GoldenStreak_92</div>
-              <div class="lb-stats">420 followers • 67% win rate • 52 bets</div>
+              <div class="lb-stats">420 followers &nbsp;·&nbsp; 67% win rate &nbsp;·&nbsp; 52 bets</div>
             </div>
-            <div class="lb-value">+15%</div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="lb-value">+15%</div>
+              <button type="button" class="btn btn-secondary btn-small" onclick="copyPlayer(this)">Copy</button>
+            </div>
           </div>
         </div>
-        <section class="section">
-          <h2 class="section-title">Player Statistics</h2>
+
+        <!-- Platform Stats -->
+        <section class="section reveal">
+          <h2 class="section-title">Platform Statistics</h2>
           <div class="features">
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px;">50K+</div>
+              <div class="feature-number">50K+</div>
               <h3>Active Players</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px;">Verified professionals on our platform.</p>
+              <p class="feature-text">Verified professionals on our platform.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px;">10K+</div>
+              <div class="feature-number">10K+</div>
               <h3>Daily Odds</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px;">Fresh bets every day from top traders.</p>
+              <p class="feature-text">Fresh bets every day from top traders.</p>
             </div>
             <div class="feature">
-              <div style="font-size: 36px; margin-bottom: 10px;">75%</div>
+              <div class="feature-number">75%</div>
               <h3>Avg Win Rate</h3>
-              <p style="font-size: 13px; color: #666; margin-top: 8px;">Professional grade success rate.</p>
+              <p class="feature-text">Professional-grade success rate.</p>
             </div>
           </div>
         </section>
+
       </div>
     </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-links">
@@ -151,5 +242,48 @@
         <div class="footer-bottom">© 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling</div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => observer.observe(el));
+
+      // Filter buttons active state
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      function copyPlayer(btn) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ Copied!';
+        btn.disabled = true;
+        showToast('Player added to your copy portfolio!', 'success');
+        setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 2000);
+      }
+
+      function showToast(msg, type) {
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<span>${type === 'success' ? '✅' : '❌'}</span> ${msg}`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateX(20px)';
+          t.style.transition = 'all 0.3s ease';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }
+    </script>
   </body>
 </html>

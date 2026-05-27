@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copy Betting | BetPro - Automated Betting Strategy</title>
-    <meta
-      name="description"
-      content="Automatically copy bets from top-performing players on BetPro. One click, unlimited earning potential."
-    />
+    <meta name="description" content="Automatically copy bets from top-performing players on BetPro. One click, unlimited earning potential." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -27,120 +27,141 @@
         <a href="signup.html" class="btn-signup">Sign Up</a>
       </div>
     </header>
+
     <main>
       <div class="container max-width">
-        <h1>Copy <span class="highlight">Betting</span></h1>
-        <p class="subtitle">
-          Automatically copy bets from top players. One click, unlimited earning
-          potential.
-        </p>
-        <div class="cta-container">
-          <button type="button" class="btn btn-primary">
-            Enable Copy Betting Now
-          </button>
-          <button type="button" class="btn btn-secondary">View Tutorial</button>
+
+        <div style="text-align:center; margin-bottom:8px;">
+          <div class="hero-badge" style="display:inline-flex; margin-bottom:16px;">
+            <span class="hero-badge-dot"></span>
+            Auto-Sync Active
+          </div>
         </div>
-        <section class="section">
+
+        <h1>Copy <span class="highlight">Betting</span></h1>
+        <p class="subtitle">Automatically copy bets from top players. One click, unlimited earning potential — fully automated.</p>
+
+        <div class="cta-container">
+          <button type="button" class="btn btn-primary" onclick="enableCopy(this)">
+            ⚡ Enable Copy Betting
+          </button>
+          <button type="button" class="btn btn-secondary">▶ View Tutorial</button>
+        </div>
+
+        <!-- How It Works -->
+        <section class="section reveal">
           <h2 class="section-title">How Copy Betting Works</h2>
           <div class="features">
             <div class="feature">
+              <div class="feature-icon">👤</div>
               <div class="feature-number">1</div>
               <h3>Select Players</h3>
-              <p class="feature-text">
-                Choose which top players you want to copy.
-              </p>
+              <p class="feature-text">Browse and choose top players you want to copy from our verified roster.</p>
             </div>
             <div class="feature">
+              <div class="feature-icon">⚙️</div>
               <div class="feature-number">2</div>
               <h3>Set Parameters</h3>
-              <p class="feature-text">
-                Define stake amount, confidence level, and limits.
-              </p>
+              <p class="feature-text">Define stake amount, confidence level, max daily loss, and other limits.</p>
             </div>
             <div class="feature">
+              <div class="feature-icon">🔄</div>
               <div class="feature-number">3</div>
               <h3>Auto Sync</h3>
-              <p class="feature-text">
-                Bets copy instantly when players place them.
-              </p>
+              <p class="feature-text">Bets copy instantly and automatically when your chosen players place them.</p>
             </div>
             <div class="feature">
-              <div class="feature-number">◈</div>
+              <div class="feature-icon">💰</div>
+              <div class="feature-number">4</div>
               <h3>Earn Profits</h3>
-              <p class="feature-text">
-                Collect your earnings automatically daily.
-              </p>
+              <p class="feature-text">Collect your earnings automatically. Withdraw daily with zero fees.</p>
             </div>
           </div>
         </section>
-        <section class="section">
+
+        <!-- Your Copy Portfolio -->
+        <section class="section reveal">
           <h2 class="section-title">Your Copy Portfolio</h2>
           <div class="portfolio-wrapper">
             <div class="stats-grid">
               <div class="stat-card stat-card-purple">
-                <div class="stat-card-value">12</div>
+                <div class="stat-card-value" data-target="12">12</div>
                 <div class="stat-card-label">Players Copying</div>
               </div>
               <div class="stat-card stat-card-green">
-                <div class="stat-card-value">+$4,250</div>
+                <div class="stat-card-value" data-prefix="+$" data-target="4250">+$4,250</div>
                 <div class="stat-card-label">This Month</div>
               </div>
               <div class="stat-card stat-card-orange">
-                <div class="stat-card-value">73%</div>
+                <div class="stat-card-value" data-target="73" data-suffix="%">73%</div>
                 <div class="stat-card-label">Win Rate</div>
               </div>
               <div class="stat-card stat-card-blue">
-                <div class="stat-card-value">127</div>
+                <div class="stat-card-value" data-target="127">127</div>
                 <div class="stat-card-label">Bets Copied</div>
               </div>
             </div>
+
             <h3 class="portfolio-title">Active Players You're Copying</h3>
+
             <div class="portfolio-players">
               <div class="player-copy-row">
-                <div>
-                  <div class="player-copy-name">★ ProTrader_Elite</div>
-                  <div class="player-copy-stats">
-                    Copying: $300/bet | Win Rate: 87%
-                  </div>
+                <div class="player-avatar" style="flex-shrink:0; margin-right:4px;">🏆</div>
+                <div style="flex:1;">
+                  <div class="player-copy-name">ProTrader_Elite</div>
+                  <div class="player-copy-stats">Copying: $300/bet &nbsp;·&nbsp; Win Rate: 87% &nbsp;·&nbsp; Active</div>
                 </div>
-                <button type="button" class="btn btn-small filter-btn">
-                  ⚙
-                </button>
+                <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                  <span class="stat-badge" style="color:var(--success); border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.1);">● Live</span>
+                  <button type="button" class="filter-btn" style="padding:8px 14px;">⚙ Manage</button>
+                </div>
               </div>
+
               <div class="player-copy-row">
-                <div>
-                  <div class="player-copy-name">◆ LuckyStreak_99</div>
-                  <div class="player-copy-stats">
-                    Copying: $250/bet | Win Rate: 82%
-                  </div>
+                <div class="player-avatar" style="flex-shrink:0; margin-right:4px;">💎</div>
+                <div style="flex:1;">
+                  <div class="player-copy-name">LuckyStreak_99</div>
+                  <div class="player-copy-stats">Copying: $250/bet &nbsp;·&nbsp; Win Rate: 82% &nbsp;·&nbsp; Active</div>
                 </div>
-                <button type="button" class="btn btn-small filter-btn">
-                  ⚙
-                </button>
+                <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                  <span class="stat-badge" style="color:var(--success); border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.1);">● Live</span>
+                  <button type="button" class="filter-btn" style="padding:8px 14px;">⚙ Manage</button>
+                </div>
               </div>
+
               <div class="player-copy-row">
-                <div>
-                  <div class="player-copy-name">● BettingKing_01</div>
-                  <div class="player-copy-stats">
-                    Copying: $200/bet | Win Rate: 79%
-                  </div>
+                <div class="player-avatar" style="flex-shrink:0; margin-right:4px;">🔥</div>
+                <div style="flex:1;">
+                  <div class="player-copy-name">BettingKing_01</div>
+                  <div class="player-copy-stats">Copying: $200/bet &nbsp;·&nbsp; Win Rate: 79% &nbsp;·&nbsp; Active</div>
                 </div>
-                <button type="button" class="btn btn-small filter-btn">
-                  ⚙
-                </button>
+                <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                  <span class="stat-badge" style="color:var(--success); border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.1);">● Live</span>
+                  <button type="button" class="filter-btn" style="padding:8px 14px;">⚙ Manage</button>
+                </div>
+              </div>
+
+              <!-- Add Player Row -->
+              <div class="player-copy-row" style="justify-content:center; cursor:pointer;" onclick="window.location.href='leaderboard.html'">
+                <div style="display:flex; align-items:center; gap:10px; color:var(--text-muted); font-size:14px; font-weight:600; transition:color 0.2s;">
+                  <span style="font-size:22px;">＋</span>
+                  Add another player from Leaderboard
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="section cta-section">
+
+        <!-- CTA -->
+        <section class="section cta-section reveal">
           <h2>Ready to Start Copying?</h2>
-          <p>Join thousands earning passive income from expert bets.</p>
-          <button type="button" class="btn btn-primary btn-on-gradient">
-            Get Started
-          </button>
+          <p>Join thousands earning passive income from expert bets every single day. No experience needed.</p>
+          <a href="signup.html" class="btn btn-on-gradient">🚀 Get Started Free</a>
         </section>
+
       </div>
     </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-links">
@@ -151,10 +172,67 @@
           <a href="#contact">Contact</a>
           <a href="#blog">Blog</a>
         </div>
-        <div class="footer-bottom">
-          © 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling
-        </div>
+        <div class="footer-bottom">© 2026 BetPro. Follow Smart. Win Smart. | Responsible Gambling</div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => observer.observe(el));
+
+      // Animated counters
+      function animateCount(el, target, prefix, suffix, duration = 1200) {
+        let start = 0;
+        const step = target / (duration / 16);
+        const timer = setInterval(() => {
+          start = Math.min(start + step, target);
+          const formatted = Math.round(start).toLocaleString();
+          el.textContent = (prefix || '') + formatted + (suffix || '');
+          if (start >= target) clearInterval(timer);
+        }, 16);
+      }
+
+      setTimeout(() => {
+        document.querySelectorAll('[data-target]').forEach(el => {
+          const target = parseInt(el.dataset.target);
+          const prefix = el.dataset.prefix || '';
+          const suffix = el.dataset.suffix || '';
+          animateCount(el, target, prefix, suffix);
+        });
+      }, 600);
+
+      function enableCopy(btn) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '⟳ Activating...';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = '✅ Copy Betting Active!';
+          btn.style.background = 'linear-gradient(135deg,#10b981,#06b6d4)';
+          showToast('Copy betting has been enabled!', 'success');
+        }, 1200);
+      }
+
+      function showToast(msg, type) {
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<span>${type === 'success' ? '✅' : '❌'}</span> ${msg}`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateX(20px)';
+          t.style.transition = 'all 0.3s ease';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }
+    </script>
   </body>
 </html>
